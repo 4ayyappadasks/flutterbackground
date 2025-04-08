@@ -8,10 +8,8 @@ import 'bgservicecontroller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  await initilizeservice(); // ⬅️ must happen BEFORE any controller
-
-  Get.put(BGController()); // ⬅️ now it's safe
+  await initilizeservice();
+  Get.put(BGController());
   if (await Permission.notification.isDenied) {
     await Permission.notification.request();
   }

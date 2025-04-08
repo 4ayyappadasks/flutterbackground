@@ -29,8 +29,8 @@ void onStart(ServiceInstance service) async {
       );
       await service.setAsForegroundService();
       log("forground");
-      Timer.periodic(Duration(seconds: 1),(timer) {
-        var controller = Get.put(BGController());
+      var controller = Get.put(BGController());
+      Timer.periodic(Duration(seconds: 2),(timer) {
         controller.apicall();
       },);
     });
